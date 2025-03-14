@@ -46,11 +46,8 @@ const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
         headless: true,
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox'
-        ],
-        executablePath: puppeteer.executablePath() // Usa a versão embutida do Chromium
+        executablePath: require("puppeteer").executablePath(),
+        args: ["--no-sandbox", "--disable-setuid-sandbox"]
     }
 });
 
