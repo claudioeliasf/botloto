@@ -4,7 +4,6 @@
   "description": "Bot para envio de palpites da Lotofácil",
   "main": "bot.js",
   "scripts": {
-    "preinstall": "npx puppeteer install chrome",
     "start": "node bot.js"
   },
   "dependencies": {
@@ -12,7 +11,7 @@
     "express": "^4.21.2",
     "moment-timezone": "^0.5.47",
     "node-schedule": "^2.1.1",
-    "puppeteer": "^22.8.2",
+    "puppeteer": "^24.4.0",
     "qrcode": "^1.5.4",
     "qrcode-terminal": "^0.12.0",
     "whatsapp-web.js": "^1.26.0",
