@@ -46,7 +46,7 @@ const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
         headless: true,
-        executablePath: require("puppeteer").executablePath(),
+        executablePath: puppeteer.executablePath(),
         args: ["--no-sandbox", "--disable-setuid-sandbox"]
     }
 });
