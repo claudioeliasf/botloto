@@ -20,5 +20,10 @@
   },
   "engines": {
     "node": ">=16.0.0"
+  },
+  "puppeteer": {
+    "download": {
+      "chromium": true
+    }
   }
 }
