@@ -4,8 +4,9 @@
   "description": "Bot para envio de palpites da Lotofácil",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js"
-  },
+  "preinstall": "npx puppeteer browsers install chrome",
+  "start": "node bot.js"
+}
   "dependencies": {
     "axios": "^1.8.2",
     "express": "^4.21.2",
