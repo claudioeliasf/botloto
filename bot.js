@@ -43,11 +43,8 @@ app.listen(PORT, "0.0.0.0", () => {
 
 // Configuração do WhatsApp Web
 const client = new Client({
-    authStrategy: new LocalAuth(),
     puppeteer: {
-        headless: true,
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || puppeteer.executablePath(),
-        args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage", "--disable-accelerated-2d-canvas", "--no-first-run", "--no-zygote", "--single-process", "--disable-gpu"]
+        executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
     }
 });
 
