@@ -1,18 +1,15 @@
-2025/03/14-09:59:15.213 21c4 Reusing MANIFEST C:\BOTLOTO1\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/03/14-09:59:15.214 21c4 Recovering log #709
-2025/03/14-09:59:15.261 21c4 Reusing old log C:\BOTLOTO1\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000709.log 
-2025/03/14-09:59:15.262 21c4 Delete type=2 #707
-2025/03/14-09:59:15.262 21c4 Delete type=2 #708
-2025/03/14-09:59:15.262 21c4 Delete type=2 #710
-2025/03/14-09:59:18.637 21c4 Level-0 table #715: started
-2025/03/14-09:59:18.663 21c4 Level-0 table #715: 883707 bytes OK
-2025/03/14-09:59:18.664 21c4 Delete type=0 #709
-2025/03/14-09:59:18.664 21c4 Manual compaction at level-0 from '\x00\xc8\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\xc9\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/03/14-09:59:20.293 2678 Compacting 1@1 + 2@2 files
-2025/03/14-09:59:20.453 2678 Generated table #716@1: 40432 keys, 2200789 bytes
-2025/03/14-09:59:20.500 2678 Generated table #717@1: 24437 keys, 948290 bytes
-2025/03/14-09:59:20.500 2678 Compacted 1@1 + 2@2 files => 3149079 bytes
-2025/03/14-09:59:20.501 2678 compacted to: files[ 0 0 2 0 0 0 0 ]
-2025/03/14-09:59:20.501 2678 Delete type=2 #711
-2025/03/14-09:59:20.502 2678 Delete type=2 #712
-2025/03/14-09:59:20.502 2678 Delete type=2 #715
+2025/03/14-13:43:33.607 180c Reusing MANIFEST C:\botloto1\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/03/14-13:43:33.633 180c Recovering log #723
+2025/03/14-13:43:33.634 180c Reusing old log C:\botloto1\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000723.log 
+2025/03/14-13:43:35.301 1e4c Level-0 table #729: started
+2025/03/14-13:43:35.310 1e4c Level-0 table #729: 32408 bytes OK
+2025/03/14-13:43:35.312 1e4c Delete type=0 #723
+2025/03/14-13:43:35.317 28c Manual compaction at level-0 from '\x00\xcb\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\xcc\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/03/14-13:43:37.024 2468 Compacting 1@1 + 2@2 files
+2025/03/14-13:43:37.121 2468 Generated table #730@1: 38650 keys, 2198208 bytes
+2025/03/14-13:43:37.188 2468 Generated table #731@1: 30408 keys, 1111536 bytes
+2025/03/14-13:43:37.188 2468 Compacted 1@1 + 2@2 files => 3309744 bytes
+2025/03/14-13:43:37.189 2468 compacted to: files[ 0 0 2 0 0 0 0 ]
+2025/03/14-13:43:37.190 2468 Delete type=2 #725
+2025/03/14-13:43:37.190 2468 Delete type=2 #726
+2025/03/14-13:43:37.190 2468 Delete type=2 #729
