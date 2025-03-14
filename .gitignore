@@ -1,0 +1,9 @@
+# Ignorar cache do WhatsApp Web
+.wwebjs_cache/
+
+# Ignorar dependências do Node.js
+node_modules/
+package-lock.json
+
+# Ignorar arquivos de log
+*.log
