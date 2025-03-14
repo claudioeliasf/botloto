@@ -5,7 +5,7 @@
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
-    "postinstall": "npm install puppeteer@22.8.2 && node node_modules/puppeteer/install.js"
+    "postinstall": "npm install puppeteer@22.8.2 --no-save && node node_modules/puppeteer/install.js"
   },
   "dependencies": {
     "axios": "^1.8.2",
