@@ -336,6 +336,7 @@ function gerarJogoMonteCarlo(dados) {
     }
     return Array.from(numerosSorteados).sort((a, b) => a - b);
 }
+
 // Função para gerar palpites
 function gerarPalpites() {
     const historico = lerHistoricoXLS(CAMINHO_ARQUIVO);
