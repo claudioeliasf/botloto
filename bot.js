@@ -46,6 +46,7 @@ const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
         headless: true,
+        executablePath: process.env.CHROMIUM_PATH || '/usr/bin/chromium-browser',
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
@@ -54,10 +55,8 @@ const client = new Client({
             '--no-first-run',
             '--no-zygote',
             '--single-process',
-            '--disable-gpu',
-            '--remote-debugging-port=9222'
-        ],
-        executablePath: process.env.CHROMIUM_PATH || puppeteer.executablePath(), // Usa o Chromium do Render
+            '--disable-gpu'
+        ]
     },
     webVersionCache: {
         type: 'remote',
