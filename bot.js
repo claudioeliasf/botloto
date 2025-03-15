@@ -8,6 +8,9 @@ const moment = require("moment-timezone");
 const path = require('path');
 const express = require('express');
 
+// Configura o fuso horário para o horário de Brasília
+moment.tz.setDefault("America/Sao_Paulo");
+
 // Caminhos dos arquivos
 const PALPITE_PATH = path.join(__dirname, 'palpite_do_dia.json');
 const RESULTADO_PATH = path.join(__dirname, 'resultado_oficial.json');
@@ -23,7 +26,7 @@ const mensagensMotivacionais = [
 
 // Configuração do Express para servir o QR Code
 const app = express();
-const PORT = process.env.PORT || 10000; // Porta para o Render
+const PORT = process.env.PORT || 3000; // Porta para o Fly.io (alterada para 3000)
 app.use(express.static(path.join(__dirname)));
 
 // Rota para exibir o QR Code
@@ -43,12 +46,43 @@ app.listen(PORT, "0.0.0.0", () => {
 
 // Configuração do WhatsApp Web
 const client = new Client({
-    authStrategy: new LocalAuth(),
+    authStrategy: new LocalAuth({
+        dataPath: path.join(__dirname, 'wwebjs_auth') // Usa o diretório persistente
+    }),
     puppeteer: {
         headless: true,
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || puppeteer.executablePath(),
-        args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage", "--disable-accelerated-2d-canvas", "--no-first-run", "--no-zygote", "--single-process", "--disable-gpu"]
-    }
+        args: [
+            "--no-sandbox",
+            "--disable-setuid-sandbox",
+            "--disable-dev-shm-usage",
+            "--disable-accelerated-2d-canvas",
+            "--no-first-run",
+            "--no-zygote",
+            "--single-process",
+            "--disable-gpu",
+            "--remote-debugging-port=9222",
+            "--disable-software-rasterizer",
+            "--disable-background-timer-throttling",
+            "--disable-backgrounding-occluded-windows",
+            "--disable-breakpad",
+            "--disable-component-update",
+            "--disable-domain-reliability",
+            "--disable-features=AudioServiceOutOfProcess",
+            "--disable-hang-monitor",
+            "--disable-ipc-flooding-protection",
+            "--disable-popup-blocking",
+            "--disable-prompt-on-repost",
+            "--disable-renderer-backgrounding",
+            "--disable-sync",
+            "--force-color-profile=srgb",
+            "--metrics-recording-only",
+            "--safebrowsing-disable-auto-update",
+            "--enable-automation",
+            "--password-store=basic",
+            "--use-mock-keychain"
+        ],
+    },
 });
 
 console.log("Configuração do Puppeteer concluída.");
@@ -256,25 +290,26 @@ client.on("group_join", async (notification) => {
     try {
         console.log("Novo membro entrou no grupo:", notification);
 
-        // Obtém o ID do usuário diretamente da notificação
-        const usuario = notification.id.participant;
+        // Obtém os IDs dos novos membros (recipientIds)
+        const novosMembros = notification.recipientIds;
 
-        // Verifica se o ID do usuário é válido
-        if (!usuario) {
-            console.error("ID do usuário inválido:", usuario);
+        // Verifica se há novos membros
+        if (!novosMembros || novosMembros.length === 0) {
+            console.error("Nenhum novo membro encontrado.");
             return;
         }
 
-        console.log("ID do usuário:", usuario);
-
-        // Envia a mensagem de boas-vindas no grupo
+        // Envia a mensagem de boas-vindas no grupo para cada novo membro
         const chat = await notification.getChat();
-        await chat.sendMessage(`🎉 Bem-vindo, @${usuario.split('@')[0]}! Que a sorte esteja com você! 🍀🚀`, {
-            mentions: [usuario]
-        });
+        for (const membro of novosMembros) {
+            // Mensagem de boas-vindas no grupo
+            await chat.sendMessage(`🎉 Bem-vindo, @${membro.split('@')[0]}! Que a sorte esteja com você! 🍀🚀`, {
+                mentions: [membro]
+            });
 
-        // Envia o áudio e a mensagem no privado
-        await enviarBoasVindas(usuario);
+            // Envia o áudio e a mensagem no privado para o novo membro
+            await enviarBoasVindas(membro);
+        }
     } catch (error) {
         console.error("Erro ao processar entrada no grupo:", error);
     }

@@ -1,23 +1,24 @@
-# fly.toml app configuration file generated for botloto on 2025-03-15T15:29:32Z
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
+# fly.toml app configuration file for botloto
 app = 'botloto'
 primary_region = 'gig'
 
-[build]
-
 [http_service]
-  internal_port = 3000
-  force_https = true
-  auto_stop_machines = 'stop'
-  auto_start_machines = true
-  min_machines_running = 0
-  processes = ['app']
+  internal_port = 3000              # Porta que o app escuta
+  force_https = true                # Força o uso de HTTPS
+  auto_stop_machines = false        # Desativa a parada automática de máquinas
+  auto_start_machines = true        # Ativa a inicialização automática de máquinas
+  min_machines_running = 1          # Mantém pelo menos 1 máquina em execução
+  processes = ['app']               # Define o processo principal
 
 [[vm]]
-  memory = '1gb'
-  cpu_kind = 'shared'
-  cpus = 1
-  memory_mb = 1024
+  memory = '1gb'                    # Memória alocada para a VM
+  cpu_kind = 'shared'               # Tipo de CPU (compartilhada)
+  cpus = 1                          # Número de CPUs
+  memory_mb = 1024                  # Memória em MB (equivalente a 1GB)
+
+[env]
+  NODE_ENV = 'production'           # Define o ambiente como produção
+
+[[mounts]]
+  source = "wwebjs_auth"            # Nome do volume criado
+  destination = "/app/wwebjs_auth"  # Diretório onde o volume será montado
