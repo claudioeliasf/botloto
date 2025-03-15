@@ -1,3 +1,5 @@
-2025/03/14-18:58:49.426 df0 Reusing MANIFEST C:\botloto1\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
-2025/03/14-18:58:49.428 df0 Recovering log #24
-2025/03/14-18:58:49.429 df0 Reusing old log C:\botloto1\.wwebjs_auth\session\Default\Local Storage\leveldb/000024.log 
+2025/03/14-22:09:54.704 76c Reusing MANIFEST C:\botloto1\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
+2025/03/14-22:09:54.710 76c Recovering log #24
+2025/03/14-22:09:54.714 76c Level-0 table #26: started
+2025/03/14-22:09:54.847 76c Level-0 table #26: 16888 bytes OK
+2025/03/14-22:09:54.855 76c Delete type=0 #24

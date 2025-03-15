@@ -1,2 +1,3 @@
-2025/03/14-09:59:25.436 e6c Creating DB C:\BOTLOTO1\.wwebjs_auth\session\Default\GCM Store since it was missing.
-2025/03/14-09:59:25.468 e6c Reusing MANIFEST C:\BOTLOTO1\.wwebjs_auth\session\Default\GCM Store/MANIFEST-000001
+2025/03/14-22:10:03.580 2bbc Reusing MANIFEST C:\botloto1\.wwebjs_auth\session\Default\GCM Store/MANIFEST-000001
+2025/03/14-22:10:03.581 2bbc Recovering log #3
+2025/03/14-22:10:03.582 2bbc Reusing old log C:\botloto1\.wwebjs_auth\session\Default\GCM Store/000003.log 

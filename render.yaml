@@ -1,4 +1,0 @@
-buildCommand: |
-  chmod +x build.sh
-  ./build.sh
-startCommand: node bot.js
